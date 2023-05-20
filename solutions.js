@@ -23,3 +23,16 @@ function digitize(n) {
 
   return arrayReverse
 }
+
+// 2) Remove First and Last Character
+
+//pop first and last character
+//str.pop(0) AND str.pop(-1)
+//.pop() only works with arrays, use .slice() instead!
+
+// removes first char (0, 0) and adds the rest of the string together minus the last char (str.length - 1)
+
+function removeChar(str) {
+  const updatedStr = str.slice(0, 0) + str.slice(1, (str.length - 1))
+  return updatedStr
+};
