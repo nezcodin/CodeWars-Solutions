@@ -59,3 +59,31 @@ function findAverage(array) {
   const average = sum / array.length
   return average
 }
+
+// 4) DNA to RNA Conversion
+//  Create a function which translates a given DNA string into RNA.
+//  EX: "GCAT"  =>  "GCAU"
+//  The input string can be of arbitrary length - in particular, it may be empty. All input is guaranteed to be valid, i.e. each input string will only ever consist of 'G', 'C', 'A' and/or 'T'.
+
+//  G -> G
+//  C -> C
+//  A -> A
+//  T -> U
+//  string may be empty
+//  string may be any length (no limit)
+//  the function needs to replace "T" with "U" if "T" is present, everything else is the same (use replace method)
+//  if string is empty, return empty string
+
+function DNAtoRNA(dna) {
+  if (dna.length == 0) {
+    return dna
+  } else {
+    //  if T is present, change every instance of T to U (tried .has() but that is for mappable objects, use .includes() instead for strings)
+    if (dna.includes('T')) {
+      const rna = dna.replaceAll('T', 'U')
+      return rna
+    } else {  //  else, return dna
+      return dna
+    }
+  }
+}
